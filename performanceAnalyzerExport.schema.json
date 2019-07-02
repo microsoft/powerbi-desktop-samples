@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema",
+    "id": "http://schemas.microsoft.com/powerbi/performanceanalyzerexport.json",
+    "title": "Microsoft Power BI Report Performance Analyzer Export Schema",
+    "type": "object",
+    "properties": {
+        "version": {
+            "description": "Version of the export file",
+            "enum": [
+                "1.0.0"
+            ]
+        },
+        "events": {
+            "description": "Events captured by the performance analyzer.",
+            "type": "array",
+            "items": {
+                "description": "Represents an operation that occurred while updating a visual.",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "The unique identifier for this event.",
+                        "type": "string"
+                    },
+                    "parentId": {
+                        "description": "The id of this event's parent event.  This must match the id of some other event in this document.  Omitted for root events.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Together with 'component', 'name' identifies the kind of event that occurred.",
+                        "type": "string"
+                    },
+                    "component": {
+                        "description": "The subsystem that performed the operation represented by this event.",
+                        "type": "string"
+                    },
+                    "start": {
+                        "description": "The timestamp when the event started.",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "description": "The timestamp when the event ended.  Omitted for events that represent an instantaneous operation.",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "metrics": {
+                        "description": "A property bag of additional information about this event.  The content varies for each kind of event.",
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "component",
+                    "start"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "version",
+        "events"
+    ],
+    "additionalProperties": false
+}
