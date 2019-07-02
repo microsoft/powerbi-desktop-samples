@@ -5,3 +5,4 @@ In Power BI Desktop you can find out how each of your report elements, such as v
 Here you'll find:
 - A [sample json file](performanceAnalyzerExport.schema.json) that is an export from the Performance Analyzer
 - A [sample pbix file](PerformanceAnalyzerExportReport.pbix) that can be used to analyze the output from the Performance Analyzer
+- A [Word doc](Power BI Performance Analyzer Export File Format.docx) that describes the way visuals query data and render on screen, and the way the Performance Analyzer records the events of the visual lifecycle.
