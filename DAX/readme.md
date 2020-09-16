@@ -1,6 +1,6 @@
 # DAX sample model
 
-The **Adventure Works DW 2020** Power BI Desktop sample model is designed to support your DAX learning. The model is based on the [Adventure Works data warehouse sample](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=tsql#data-warehouse-downloads) for AdventureWorksDW2017—however, the data has been modified to suit the objectives of the sample model and updated to 2020. Download the [PBIX](Adventure Works DW 2020.pbix) or the [BAK](Adventure Works DW 2020.bak).
+The **Adventure Works DW 2020** Power BI Desktop sample model is designed to support your DAX learning. The model is based on the [Adventure Works data warehouse sample](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=tsql#data-warehouse-downloads) for AdventureWorksDW2017—however, the data has been modified to suit the objectives of the sample model and updated to 2020. Download the [PBIX](Adventure%20Works%20DW%202020.pbix) or the [BAK](Adventure%20Works%20DW%202020.bak).
 
 ## Scenario
 ![An image of the Adventure Works company logo is shown.](https://docs.microsoft.com/en-us/power-bi/guidance/media/dax-sample-model/adventure-works-logo-150x150.png)
