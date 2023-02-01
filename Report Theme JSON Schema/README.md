@@ -51,7 +51,7 @@ The error messges that we generate in Power BI Desktop are based on [the Ajv lib
 ## Limitations
 
 We currently do not support the following items in the custom report theme JSON, though we may add support given feedback:
-* References to specific data colors, e.g. `expr: { SQThemeColorExpr: { ... } }`
+* References to dynamic content that reports support (other than `ThemeDataColor` expressions), e.g. `expr: { SparklineData: { ... } }`
 * References from formatting colors to semantic colors, e.g. `"foreground"` for a `Fill` type.
 * References to model-specific items, such as _conditional formatting_ that depends on fields or data values
 
