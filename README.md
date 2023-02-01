@@ -34,3 +34,7 @@ Within the *Monthly Desktop Blog Samples* folder, you will find the sample PBIX 
 ## Report samples
 
 Within the *Sample Reports* folder, you will find different report samples that can help you explore Power BI.
+
+## Report theme JSON schema
+
+Within the *Report Theme JSON Schema* folder, you will find [JSON schemas](http://json-schema.org) that specify valid properties to be customized in a Power BI report.  This schema can be used in external application development or as a direct reference `"$schema"` within your custom theme JSON files for validation.  More information [in the folder's README.md file](/Report%20Theme%20JSON%20Schema/README.md).
