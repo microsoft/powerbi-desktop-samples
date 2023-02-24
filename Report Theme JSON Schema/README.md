@@ -6,9 +6,9 @@ Each file is tagged with the monthly release version of Desktop.  Inside the fil
 
 As part of our on-going effort to provide complete specification of our file format, subsequent versions of this schema will feature mostly additive changes as new formatting settings are added.
 
-| Power BI Desktop version |  Exploration version | Schema name                  |
-|--------------------------|----------------------|------------------------------|
-| 2.114.x.x                | 5.41                 | reportThemeSchema-2.114.json |
+| Power BI Desktop version | Date     |  Exploration version | Schema name                  |
+|--------------------------|----------|----------------------|------------------------------|
+| 2.114.x.x                | Feb 2023 | 5.41                 | reportThemeSchema-2.114.json |
 
 ## Using the JSON schema
 
@@ -49,6 +49,9 @@ These schemas are used verbatim inside of Power BI Desktop to validate custom JS
 The error messges that we generate in Power BI Desktop are based on [the Ajv library](https://ajv.js.org/); you may get different error messages if you use a different JSON schema validator.
 
 ## Limitations
+The following are known issues in the February 2023 release of Desktop (2.114) and will be fixed in the March 2023 release of Power BI Desktop:
+* The top-level `icons` schema only supports icons defined in a list, not as a named object list.  We will accept both in the upcoming version.
+* Certain "verticalAlignment" formatting options may only accept horizontal alignment options such as "left", "center", and "right" instead of "top", "middle", and "bottom".
 
 We currently do not support the following items in the custom report theme JSON, though we may add support given feedback:
 * References to dynamic content that reports support (other than `ThemeDataColor` expressions), e.g. `expr: { SparklineData: { ... } }`
