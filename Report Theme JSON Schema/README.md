@@ -9,6 +9,7 @@ As part of our on-going effort to provide complete specification of our file for
 | Power BI Desktop version | Date     |  Exploration version | Schema name                  |
 |--------------------------|----------|----------------------|------------------------------|
 | 2.114.x.x                | Feb 2023 | 5.41                 | reportThemeSchema-2.114.json |
+| 2.115.x.x                | Mar 2023 | 5.42                 | reportThemeSchema-2.115.json |
 
 ## Using the JSON schema
 
@@ -49,14 +50,26 @@ These schemas are used verbatim inside of Power BI Desktop to validate custom JS
 The error messges that we generate in Power BI Desktop are based on [the Ajv library](https://ajv.js.org/); you may get different error messages if you use a different JSON schema validator.
 
 ## Limitations
-The following are known issues in the February 2023 release of Desktop (2.114) and will be fixed in the March 2023 release of Power BI Desktop:
-* The top-level `icons` schema only supports icons defined in a list, not as a named object list.  We will accept both in the upcoming version.
-* Certain "verticalAlignment" formatting options may only accept horizontal alignment options such as "left", "center", and "right" instead of "top", "middle", and "bottom".
 
 We currently do not support the following items in the custom report theme JSON, though we may add support given feedback:
 * References to dynamic content that reports support (other than `ThemeDataColor` expressions), e.g. `expr: { SparklineData: { ... } }`
 * References from formatting colors to semantic colors, e.g. `"foreground"` for a `Fill` type.
 * References to model-specific items, such as _conditional formatting_ that depends on fields or data values
+
+### Known issues
+The following describes known issues in previously-released reportThemeSchema JSON files.  "Open issues" are not prioritized for quick fixing and will be priotized as time allows.
+
+#### February 2023 (2.114)
+Issues in the February 2023 release (2.114) and fixed in the March 2023 release (2.115) of Power BI Desktop:
+* The top-level `icons` schema only supports icons defined in a list, not as a named object list.
+* Certain "verticalAlignment" formatting options may only accept horizontal alignment options such as "left", "center", and "right" instead of "top", "middle", and "bottom".
+* Eight-digit hex colors were not allowed for `Fill` definitions, where the last octet describes alpha transparency, e.g.: `#0000ff7f` -> `rgba(0, 0, 255, 0.5)`
+
+#### Open issues
+
+* Enumeration values are not clearly defined such as "labelOrientation"; [consider using enum descriptors using `const`](https://github.com/json-schema-org/json-schema-spec/issues/57#issuecomment-247861695)
+* Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
+
 
 ## Comments or suggestions
 
