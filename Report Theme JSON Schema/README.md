@@ -8,8 +8,9 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                  |
 |--------------------------|----------|----------------------|------------------------------|
-| 2.114.x.x                | Feb 2023 | 5.41                 | reportThemeSchema-2.114.json |
+| 2.116.x.x                | Apr 2023 | 5.43                 | reportThemeSchema-2.116.json |
 | 2.115.x.x                | Mar 2023 | 5.42                 | reportThemeSchema-2.115.json |
+| 2.114.x.x                | Feb 2023 | 5.41                 | reportThemeSchema-2.114.json |
 
 ## Using the JSON schema
 
@@ -67,7 +68,9 @@ Issues in the February 2023 release (2.114) and fixed in the March 2023 release 
 
 #### Open issues
 
-* Enumeration values are not clearly defined such as "labelOrientation"; [consider using enum descriptors using `const`](https://github.com/json-schema-org/json-schema-spec/issues/57#issuecomment-247861695)
+* _Fix forthcoming for May 2023 release_: Enumeration values are not clearly defined such as "labelOrientation"; [consider using enum descriptors using `const`](https://github.com/json-schema-org/json-schema-spec/issues/57#issuecomment-247861695)
+* _Fix forthcoming for May 2023 release_: Images
+* Default "group" styling is not exported into the schema (not blocking, but not documented in schema; internal #1068300)
 * Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
 
 
