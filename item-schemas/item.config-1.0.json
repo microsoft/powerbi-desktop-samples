@@ -1,0 +1,24 @@
+{
+  "title": "ArtifactConfig",
+  "description": "The ArtifactConfig stored as item.config.json holds the LogicalId of the artifact and identifies this directory as an artifact. This file can be present in both the Report and Dataset folders with different LogicalIds. This file is optional.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "The verion of this artifact. The current latest version is 1.0",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "logicalId": {
+      "title": "LogicalId",
+      "description": "The logicalId of the artifact is a workspace-unique immutable identifier representing a logical artifact and its source control representation. There is a different logicalId in the Report and Dataset folder.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "logicalId"
+  ]
+}

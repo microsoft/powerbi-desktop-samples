@@ -1,0 +1,70 @@
+{
+  "title": "ArtifactShortcut",
+  "description": "The ArtifactShortcut is a file that ends in a .pbip extension. It is the default shortcut for opening up pbip based artifacts and holds a link to the report path as well as other settings. This file is optional.",
+  "definitions": {
+    "ArtifactShortcutContainer": {
+      "type": "object",
+      "properties": {
+        "report": {
+          "$ref": "#/definitions/ArtifactShortcutReportReference"
+        }
+      },
+      "required": [
+        "report"
+      ]
+    },
+    "ArtifactShortcutReportReference": {
+      "title": "Report",
+      "description": "Describes a reference to a report artifact.",
+      "type": "object",
+      "properties": {
+        "path": {
+          "title": "Path",
+          "description": "The path to the report artifact. This must be a relative path.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "ArtifactShortcutSettings": {
+      "title": "Settings",
+      "description": "Holds settings applied when opening this artifact shortcut.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "enableAutoRecovery": {
+          "title": "EnableAutoRecovery",
+          "description": "Whether Power BI Desktop should periodically save a copy of the open report and dataset to guard against the program closing unexpectedly.",
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "The version of the artifact shortcut file format.",
+      "type": "string"
+    },
+    "artifacts": {
+      "title": "Artifacts",
+      "description": "The artifacts referenced by this shortcut file.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ArtifactShortcutContainer"
+      }
+    },
+    "settings": {
+      "$ref": "#/definitions/ArtifactShortcutSettings"
+    }
+  },
+  "required": [
+    "version",
+    "artifacts"
+  ]
+}

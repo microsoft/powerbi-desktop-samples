@@ -1,0 +1,271 @@
+{
+  "title": "UnappliedChanges",
+  "description": "The UnappliedChanges stored as unappliedChanges.json holds information about changes that have not yet been applied to the data model. This includes M queries and associated metadata. This file is optional.",
+  "definitions": {
+    "ConceptualSchemaSettingsStorage": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "IncludeFutureArtifacts": {
+          "title": "IncludeFutureArtifacts",
+          "description": "A boolean indicating if new tables are loaded on table refresh.",
+          "type": "boolean"
+        },
+        "ModelObjectUrnToSerializedRemovedChildren": {
+          "title": "ModelObjectUrnToSerializedRemovedChildren",
+          "description": "A list of tables excluded from the dataset.",
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "PerspectiveName": {
+          "title": "PerspectiveName",
+          "description": "The name of the perspective you are connected to.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "SerializedModelObjectNameDisambiguationPreferences": {
+          "title": "SerializedModelObjectNameDisambiguationPreferences",
+          "description": "Controls how duplicate names are resolved.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "IncludeFutureArtifacts",
+        "ModelObjectUrnToSerializedRemovedChildren",
+        "PerspectiveName"
+      ]
+    },
+    "QueryGroupStorage": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The datatype of the results from the M expression.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "title": "Id",
+          "description": "The datatype of the results from the M expression.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "title": "Order",
+          "description": "The order of the group.",
+          "type": "integer"
+        },
+        "description": {
+          "title": "Description",
+          "description": "The datatype of the results from the M expression.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parentId": {
+          "title": "ParentId",
+          "description": "The id of the parent group.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isUngroupedQueriesVirtualGroup": {
+          "title": "IsUngroupedQueriesVirtualGroup",
+          "description": "A boolean indicating if this is the Other Queries group.",
+          "type": "boolean"
+        }
+      }
+    },
+    "QueryStorage": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The name of the query.",
+          "type": "string"
+        },
+        "lineageTag": {
+          "title": "ModelLineageTag",
+          "description": "A GUID representing the Lineage Tag. The Lineage tag maps this query to the data model.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "A description of the query.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "queryGroupId": {
+          "title": "QueryGroupId",
+          "description": "The ID for the QueryGroup",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "navigationStepName": {
+          "title": "NavigationStepName",
+          "description": "The NavigationStepName",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refreshWhenRefreshingAll": {
+          "title": "RefreshWhenRefreshingAll",
+          "description": "A boolean indicating if it should refresh this query when refreshing all the queries.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "text": {
+          "title": "Text",
+          "description": "The M query to be applied.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "isDirectQuery": {
+          "title": "IsDirectQuery",
+          "description": "A boolean indicating if this is a Direct Query Connection.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "lastLoadedAsTableFormulaText": {
+          "title": "LastLoadedAsTableFormulaText",
+          "description": "A boolean indicating if it was last loaded as TableFormulaText.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "loadedAsTable": {
+          "title": "LoadedAsTable",
+          "description": "A boolean indicating if it was loaded as a table.",
+          "type": "boolean"
+        },
+        "loadAsTableDisabled": {
+          "title": "LoadAsTableDisabled",
+          "description": "A boolean indicating if the query should be loaded as a table.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "resultType": {
+          "title": "ResultType",
+          "description": "The datatype of the results from the M expression.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isHidden": {
+          "title": "IsHidden",
+          "description": "A boolean indicating if the query is hidden from the query editor. It is recommended to leave this property as is.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "text"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "Version of the local settings the file format.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conceptualSchemaSettings": {
+      "title": "ConceptualSchemaSettings",
+      "description": "This holds settings related to Direct Query.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": {
+        "$ref": "#/definitions/ConceptualSchemaSettingsStorage"
+      }
+    },
+    "queries": {
+      "title": "Queries",
+      "description": "A list of the queries that have not yet been applied.",
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/QueryStorage"
+      }
+    },
+    "queryGroups": {
+      "title": "QueryGroups",
+      "description": "The unapplied query groups.",
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/QueryGroupStorage"
+      }
+    },
+    "culture": {
+      "title": "Culture",
+      "description": "The Mashup Document culture.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "firewallEnabled": {
+      "title": "FirewallEnabled",
+      "description": "A boolean indicating if we seperate queries for privacy.",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "version"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "ArtifactMetadata",
+  "description": "The ArtifactMetadata stored as item.metadata.json holds the Type and DisplayName of the artifact. The DisplayName is what is shown in the title bar of Power BI Desktop. There will be an ArtifactMetadata file in both the Report and Dataset folders. This file is optional.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The type of the artifact either \"report\" or \"dataset\".",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "displayName": {
+      "title": "DisplayName",
+      "description": "The displayname of the artifact.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "title": "Description",
+      "description": "The description of the artifact.",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
