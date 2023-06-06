@@ -2,8 +2,6 @@ This folder contains the authoritative JSON schema files for validating item met
 
 The schemas can be used in external application development or as a direct reference "$schema" when editing the metadata files in a text editor like Visual Studio Code. 
 
-To learn more, see [Editing JSON with Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
-
 # Report schemas
 
 Within the [Report schemas folder](./report/README.md), you will find JSON schemas for the Report metadata files.
@@ -77,3 +75,5 @@ Or by mapping the metadata files to your VS Code user settings:
 }
 
 ```
+
+To learn more, see [Editing JSON with Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
