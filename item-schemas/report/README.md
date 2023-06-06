@@ -4,7 +4,7 @@ This folder contains the authoritative JSON schema files for validating report i
 
 - \<report name\>.Report
     - .pbi
-        - [localSettings.json](localSettings-1.0.md)
-    - [definition.pbir](definition.pbir-1.0.md)
-    - [item.config.json](../common/item.config-1.0.md)
-    - [item.metadata.json](../common/item.metadata-1.0.md)
+        - [localSettings.json](localSettings.md)
+    - [definition.pbir](definition.pbir.md)
+    - [item.config.json](../common/item.config.md)
+    - [item.metadata.json](../common/item.metadata.md)

@@ -2,6 +2,6 @@ This folder contains the authoritative JSON schema files for validating common i
 
 # Schemas
 
-- [item.config.json](item.config-1.0.md)
-- [item.metadata.json](item.metadata-1.0.md)
-- [.pbip](pbip-1.0.md)
+- [item.config.json](item.config.md)
+- [item.metadata.json](item.metadata.md)
+- [.pbip](pbip.md)
