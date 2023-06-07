@@ -289,3 +289,5 @@ __pycache__/
 
 generateItemSchemasMarkdown.cmd
 generateItemSchemasMarkdown.yaml
+
+item-schemas/test*
