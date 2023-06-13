@@ -1,42 +1,47 @@
 # DatasetDefinition
 
-- [1. Property `DatasetDefinition > version`](#version)
-- [2. Property `DatasetDefinition > settings`](#settings)
+_The DatasetDefinition stored as definition.pbidataset holds information about the overall dataset definition. This file is required._
 
-**Title:** DatasetDefinition
+Type: `object`
 
-|                           |                                                                           |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Type**                  | `object`                                                                  |
-| **Required**              | No                                                                        |
-| **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
+<i id="">path: #</i>
 
-**Description:** The DatasetDefinition stored as definition.pbidataset holds information about the overall dataset definition. This file is required.
+This schema <u>does not</u> accept additional properties.
 
-| Property                 | Pattern | Type           | Deprecated | Definition                       | Title/Description                                                                                                                                                                        |
-| ------------------------ | ------- | -------------- | ---------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| + [version](#version )   | No      | string or null | No         | -                                | Version                                                                                                                                                                                  |
-| - [settings](#settings ) | No      | object or null | No         | In #/definitions/DatasetSettings | Settings for this dataset that do not impact the behavior of the data model itself. Instead, these settings control the behavior of other Power BI features associated with the dataset. |
+**_Properties_**
 
-## <a name="version"></a>1. Property `DatasetDefinition > version`
+ - <b id="#/properties/version">version</b> `required`
+	 - ### Version
+	 - _Version of the dataset item file format. This also serves as the version number for the .pbidataset file format._
+	 - Types: `string`, `null`
+	 - <i id="/properties/version">path: #/properties/version</i>
+	 - The value is restricted to the following: 
+		 1. _"1.0"_
+ - <b id="#/properties/settings">settings</b>
+	 - <i id="/properties/settings">path: #/properties/settings</i>
+	 - &#36;ref: [#/definitions/DatasetSettings](#/definitions/DatasetSettings)
+# definitions
 
-**Title:** Version
+**_DatasetSettings_**
 
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string or null` |
-| **Required** | Yes              |
+ - ## Settings
+ - _Settings for this dataset that do not impact the behavior of the data model itself. Instead, these settings control the behavior of other Power BI features associated with the dataset._
+ - Types: `object`, `null`
+ - <i id="/definitions/DatasetSettings">path: #/definitions/DatasetSettings</i>
+ - This schema <u>does not</u> accept additional properties.
+ - **_Properties_**
+	 - <b id="#/definitions/DatasetSettings/properties/qnaEnabled">qnaEnabled</b>
+		 - #### QnaEnabled
+		 - _Whether Q&A is enabled for this dataset._
+		 - Type: `boolean`
+		 - <i id="/definitions/DatasetSettings/properties/qnaEnabled">path: #/definitions/DatasetSettings/properties/qnaEnabled</i>
+	 - <b id="#/definitions/DatasetSettings/properties/qnaLsdlSharingPermissions">qnaLsdlSharingPermissions</b>
+		 - #### QnaLsdlSharingPermissions
+		 - _Describes how the linguistic schema (LSDL) can be shared with other users within the same tenant. Allowed values are 0 (LSDL can be shared with users with read permission) and 1 (LSDL can be shared with all users)._
+		 - Type: `integer`
+		 - <i id="/definitions/DatasetSettings/properties/qnaLsdlSharingPermissions">path: #/definitions/DatasetSettings/properties/qnaLsdlSharingPermissions</i>
+		 - The value is restricted to the following: 
+			 1. `0`
+			 2. `1`
 
-**Description:** Version of the dataset artifact file format. This also serves as the version number for the .pbidataset file format.
 
-## <a name="settings"></a>2. Property `DatasetDefinition > settings`
-
-|                |                               |
-| -------------- | ----------------------------- |
-| **Type**       | `object or null`              |
-| **Required**   | No                            |
-| **Defined in** | #/definitions/DatasetSettings |
-
-**Description:** Settings for this dataset that do not impact the behavior of the data model itself. Instead, these settings control the behavior of other Power BI features associated with the dataset.
-
-----------------------------------------------------------------------------------------------------------------------------

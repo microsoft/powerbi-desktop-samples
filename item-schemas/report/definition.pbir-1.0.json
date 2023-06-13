@@ -1,14 +1,15 @@
 {
   "title": "ReportDefinition",
-  "description": "The ReportDefinition stored as definition.pbir provides the overall definition of a report. It contains metadata about the overall file structure and provides core settings. It holds the DatasetReference where exactly one of either byPath or byConnection is required. The byConnection property would typically be used for LiveConnect scenarios. This file is required.",
+  "description": "The ReportDefinition is stored as definition.pbir. It contains metadata about the overall file structure, holds core settings, and holds a reference to the dataset used by this report. This file is required.",
   "definitions": {
     "DatasetReference": {
       "title": "DatasetReference",
-      "description": "Describes the dataset bound to this report.",
+      "description": "The DatasetReference defines the dataset that is bound to this report. It is required to have exactly one of either the byPath or byConnection properties. The byConnection property would typically be used for LiveConnect scenarios whereas byPath would point at a local dataset.",
       "type": [
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "byPath": {
           "$ref": "#/definitions/ReportDatasetReferenceByPath"
@@ -20,11 +21,12 @@
     },
     "ReportDatasetReferenceByConnection": {
       "title": "ByConnection",
-      "description": "Provides a reference to a remote dataset using a connection string.",
+      "description": "Provides a reference to a remote dataset using a connection string. The connection string must point to a dataset hosted in the Microsoft Fabric service.  Connections to other Analysis Services semantic models must use a byPath reference to a dataset definition containing a modelReference.json file.",
       "type": [
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "connectionString": {
           "title": "ConnectionString",
@@ -36,7 +38,7 @@
         },
         "pbiServiceModelId": {
           "title": "PbiServiceModelId",
-          "description": "Information used by Power BI Service.",
+          "description": "The unique identifier for the target dataset in the Microsoft Fabric service.",
           "type": [
             "integer",
             "null"
@@ -44,7 +46,7 @@
         },
         "pbiModelVirtualServerName": {
           "title": "PbiModelVirtualServerName",
-          "description": "Information used by Power BI Service.",
+          "description": "The virtual server name for the target dataset in the Microsoft Fabric service.",
           "type": [
             "string",
             "null"
@@ -52,7 +54,7 @@
         },
         "pbiModelDatabaseName": {
           "title": "PbiModelDatabaseName",
-          "description": "Information used by Power BI Service.",
+          "description": "The database name for the target dataset in the Microsoft Fabric service.",
           "type": [
             "string",
             "null"
@@ -60,7 +62,7 @@
         },
         "name": {
           "title": "Name",
-          "description": "The name of the connection.",
+          "description": "The name of the connection. The value of this property must be 'EntityDataSource'. This property will be removed in a future release.",
           "type": [
             "string",
             "null"
@@ -68,7 +70,7 @@
         },
         "connectionType": {
           "title": "ConnectionType",
-          "description": "The type of connection, typically would be one of the following: pbiServiceLive, pbiServiceXmlaStyleLive, pbiserviceOnPremLive, analysisServicesDatabaseLive.",
+          "description": "The type of connection. The value of this property must be 'pbiServiceXmlaStyleLive'. This property will be removed in a future release.",
           "type": [
             "string",
             "null"
@@ -91,10 +93,11 @@
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "path": {
           "title": "Path",
-          "description": "Provides a reference to a remote dataset using a connection string.",
+          "description": "A relative path from this file to the target dataset artifact folder. Uses ‘/’ as a directory separator.",
           "type": [
             "string",
             "null"
@@ -107,6 +110,7 @@
     }
   },
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
@@ -114,6 +118,9 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "1.0"
       ]
     },
     "datasetReference": {

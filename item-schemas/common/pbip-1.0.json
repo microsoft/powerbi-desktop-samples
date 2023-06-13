@@ -1,9 +1,10 @@
 {
-  "title": "ArtifactShortcut",
-  "description": "The ArtifactShortcut is a file that ends in a .pbip extension. It is the default shortcut for opening up pbip based artifacts and holds a link to the report path as well as other settings. This file is optional.",
+  "title": "ItemShortcut",
+  "description": "The ItemShortcut is a file that ends in a .pbip extension. It is the default shortcut for opening up pbip based items and holds a link to the report path as well as other settings. This file is optional.",
   "definitions": {
     "ArtifactShortcutContainer": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "report": {
           "$ref": "#/definitions/ArtifactShortcutReportReference"
@@ -15,12 +16,13 @@
     },
     "ArtifactShortcutReportReference": {
       "title": "Report",
-      "description": "Describes a reference to a report artifact.",
+      "description": "Describes a reference to a report item.",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "path": {
           "title": "Path",
-          "description": "The path to the report artifact. This must be a relative path.",
+          "description": "The path to the report item. This must be a relative path and ‘/’ must be used as the directory separator.",
           "type": "string"
         }
       },
@@ -30,11 +32,12 @@
     },
     "ArtifactShortcutSettings": {
       "title": "Settings",
-      "description": "Holds settings applied when opening this artifact shortcut.",
+      "description": "Holds settings applied when opening this item shortcut.",
       "type": [
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "enableAutoRecovery": {
           "title": "EnableAutoRecovery",
@@ -45,15 +48,19 @@
     }
   },
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
-      "description": "The version of the artifact shortcut file format.",
-      "type": "string"
+      "description": "The version of the item shortcut file format.",
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
     },
     "artifacts": {
       "title": "Artifacts",
-      "description": "The artifacts referenced by this shortcut file.",
+      "description": "The items referenced by this shortcut file.",
       "type": "array",
       "items": {
         "$ref": "#/definitions/ArtifactShortcutContainer"

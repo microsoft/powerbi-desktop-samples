@@ -1,121 +1,54 @@
 # EditorSettings
 
-- [1. Property `EditorSettings > version`](#version)
-- [2. Property `EditorSettings > showHiddenFields`](#showHiddenFields)
-- [3. Property `EditorSettings > autodetectRelationships`](#autodetectRelationships)
-- [4. Property `EditorSettings > parallelQueryLoading`](#parallelQueryLoading)
-- [5. Property `EditorSettings > typeDetectionEnabled`](#typeDetectionEnabled)
-- [6. Property `EditorSettings > relationshipImportEnabled`](#relationshipImportEnabled)
-- [7. Property `EditorSettings > relationshipRefreshEnabled`](#relationshipRefreshEnabled)
-- [8. Property `EditorSettings > runBackgroundAnalysis`](#runBackgroundAnalysis)
+_The EditorSettings stored as editorSettings.json holds dataset editor settings that are saved as part of the dataset definition for use across users or environments. This file is optional._
 
-**Title:** EditorSettings
+Type: `object`
 
-|                           |                                                                           |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Type**                  | `object`                                                                  |
-| **Required**              | No                                                                        |
-| **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
+<i id="">path: #</i>
 
-**Description:** The EditorSettings stored as editorSettings.json holds dataset editor settings that are saved as part of the dataset definition for use across users or environments. This file is optional.
+This schema <u>does not</u> accept additional properties.
 
-| Property                                                     | Pattern | Type           | Deprecated | Definition | Title/Description          |
-| ------------------------------------------------------------ | ------- | -------------- | ---------- | ---------- | -------------------------- |
-| + [version](#version )                                       | No      | string or null | No         | -          | Version                    |
-| - [showHiddenFields](#showHiddenFields )                     | No      | boolean        | No         | -          | ShowHiddenFields           |
-| - [autodetectRelationships](#autodetectRelationships )       | No      | boolean        | No         | -          | AutodetectRelationships    |
-| - [parallelQueryLoading](#parallelQueryLoading )             | No      | boolean        | No         | -          | ParallelQueryLoading       |
-| - [typeDetectionEnabled](#typeDetectionEnabled )             | No      | boolean        | No         | -          | TypeDetectionEnabled       |
-| - [relationshipImportEnabled](#relationshipImportEnabled )   | No      | boolean        | No         | -          | RelationshipImportEnabled  |
-| - [relationshipRefreshEnabled](#relationshipRefreshEnabled ) | No      | boolean        | No         | -          | RelationshipRefreshEnabled |
-| - [runBackgroundAnalysis](#runBackgroundAnalysis )           | No      | boolean        | No         | -          | RunBackgroundAnalysis      |
+**_Properties_**
 
-## <a name="version"></a>1. Property `EditorSettings > version`
-
-**Title:** Version
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string or null` |
-| **Required** | Yes              |
-
-**Description:** Version of the dataset editor settings file format.
-
-## <a name="showHiddenFields"></a>2. Property `EditorSettings > showHiddenFields`
-
-**Title:** ShowHiddenFields
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether hidden fields should be shown in a field list.
-
-## <a name="autodetectRelationships"></a>3. Property `EditorSettings > autodetectRelationships`
-
-**Title:** AutodetectRelationships
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether relationships should be automatically detected when adding tables.
-
-## <a name="parallelQueryLoading"></a>4. Property `EditorSettings > parallelQueryLoading`
-
-**Title:** ParallelQueryLoading
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether multiple M queries should be run in parallel.
-
-## <a name="typeDetectionEnabled"></a>5. Property `EditorSettings > typeDetectionEnabled`
-
-**Title:** TypeDetectionEnabled
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether to detect column types and headers for unstructured data sources.
-
-## <a name="relationshipImportEnabled"></a>6. Property `EditorSettings > relationshipImportEnabled`
-
-**Title:** RelationshipImportEnabled
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether relationships should be imported from data sources during the first load of data.
-
-## <a name="relationshipRefreshEnabled"></a>7. Property `EditorSettings > relationshipRefreshEnabled`
-
-**Title:** RelationshipRefreshEnabled
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether relationships should be updated or deleted when refreshing data.
-
-## <a name="runBackgroundAnalysis"></a>8. Property `EditorSettings > runBackgroundAnalysis`
-
-**Title:** RunBackgroundAnalysis
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-
-**Description:** Whether to load data previews for the query editor in the background.
-
-----------------------------------------------------------------------------------------------------------------------------
+ - <b id="#/properties/version">version</b> `required`
+	 - ### Version
+	 - _Version of the dataset editor settings file format._
+	 - Types: `string`, `null`
+	 - <i id="/properties/version">path: #/properties/version</i>
+	 - The value is restricted to the following: 
+		 1. _"1.0"_
+ - <b id="#/properties/showHiddenFields">showHiddenFields</b>
+	 - ### ShowHiddenFields
+	 - _Whether hidden fields should be shown in a field list._
+	 - Type: `boolean`
+	 - <i id="/properties/showHiddenFields">path: #/properties/showHiddenFields</i>
+ - <b id="#/properties/autodetectRelationships">autodetectRelationships</b>
+	 - ### AutodetectRelationships
+	 - _Whether relationships should be automatically detected when adding tables._
+	 - Type: `boolean`
+	 - <i id="/properties/autodetectRelationships">path: #/properties/autodetectRelationships</i>
+ - <b id="#/properties/parallelQueryLoading">parallelQueryLoading</b>
+	 - ### ParallelQueryLoading
+	 - _Whether multiple M queries should be run in parallel._
+	 - Type: `boolean`
+	 - <i id="/properties/parallelQueryLoading">path: #/properties/parallelQueryLoading</i>
+ - <b id="#/properties/typeDetectionEnabled">typeDetectionEnabled</b>
+	 - ### TypeDetectionEnabled
+	 - _Whether to detect column types and headers for unstructured data sources._
+	 - Type: `boolean`
+	 - <i id="/properties/typeDetectionEnabled">path: #/properties/typeDetectionEnabled</i>
+ - <b id="#/properties/relationshipImportEnabled">relationshipImportEnabled</b>
+	 - ### RelationshipImportEnabled
+	 - _Whether relationships should be imported from data sources during the first load of data._
+	 - Type: `boolean`
+	 - <i id="/properties/relationshipImportEnabled">path: #/properties/relationshipImportEnabled</i>
+ - <b id="#/properties/relationshipRefreshEnabled">relationshipRefreshEnabled</b>
+	 - ### RelationshipRefreshEnabled
+	 - _Whether relationships should be updated or deleted when refreshing data._
+	 - Type: `boolean`
+	 - <i id="/properties/relationshipRefreshEnabled">path: #/properties/relationshipRefreshEnabled</i>
+ - <b id="#/properties/runBackgroundAnalysis">runBackgroundAnalysis</b>
+	 - ### RunBackgroundAnalysis
+	 - _Whether to load data previews for the query editor in the background._
+	 - Type: `boolean`
+	 - <i id="/properties/runBackgroundAnalysis">path: #/properties/runBackgroundAnalysis</i>

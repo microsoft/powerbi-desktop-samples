@@ -1,21 +1,22 @@
 {
   "title": "UnappliedChanges",
-  "description": "The UnappliedChanges stored as unappliedChanges.json holds information about changes that have not yet been applied to the data model. This includes M queries and associated metadata. This file is optional.",
+  "description": "Holds information about changes that have not yet been applied to the data model. This includes M queries and associated metadata. This file is optional.",
   "definitions": {
     "ConceptualSchemaSettingsStorage": {
       "type": [
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "IncludeFutureArtifacts": {
           "title": "IncludeFutureArtifacts",
-          "description": "A boolean indicating if new tables are loaded on table refresh.",
+          "description": "Indicates whether tables will be automatically added to the local model as they're added to the remote data source.",
           "type": "boolean"
         },
         "ModelObjectUrnToSerializedRemovedChildren": {
           "title": "ModelObjectUrnToSerializedRemovedChildren",
-          "description": "A list of tables excluded from the dataset.",
+          "description": "A list of remote tables excluded from the local model.",
           "type": [
             "object",
             "null"
@@ -29,15 +30,7 @@
         },
         "PerspectiveName": {
           "title": "PerspectiveName",
-          "description": "The name of the perspective you are connected to.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "SerializedModelObjectNameDisambiguationPreferences": {
-          "title": "SerializedModelObjectNameDisambiguationPreferences",
-          "description": "Controls how duplicate names are resolved.",
+          "description": "The name of the perspective used to select which tables will be included from the target model.",
           "type": [
             "string",
             "null"
@@ -52,10 +45,11 @@
     },
     "QueryGroupStorage": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "title": "Name",
-          "description": "The datatype of the results from the M expression.",
+          "description": "The user visible name of this group.",
           "type": [
             "string",
             "null"
@@ -63,7 +57,7 @@
         },
         "id": {
           "title": "Id",
-          "description": "The datatype of the results from the M expression.",
+          "description": "The identifier used to refer to this group in a query's queryGroupId or group's parentId.",
           "type": [
             "string",
             "null"
@@ -76,7 +70,7 @@
         },
         "description": {
           "title": "Description",
-          "description": "The datatype of the results from the M expression.",
+          "description": "The description of the group.",
           "type": [
             "string",
             "null"
@@ -99,6 +93,7 @@
     },
     "QueryStorage": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "title": "Name",
@@ -107,7 +102,7 @@
         },
         "lineageTag": {
           "title": "ModelLineageTag",
-          "description": "A GUID representing the Lineage Tag. The Lineage tag maps this query to the data model.",
+          "description": "An optional tag that can be used to define the lineage of an expression across different versions of a model.",
           "type": [
             "string",
             "null"
@@ -123,7 +118,7 @@
         },
         "queryGroupId": {
           "title": "QueryGroupId",
-          "description": "The ID for the QueryGroup",
+          "description": "The GUID of the query group that the query belongs to.",
           "type": [
             "string",
             "null"
@@ -131,7 +126,7 @@
         },
         "navigationStepName": {
           "title": "NavigationStepName",
-          "description": "The NavigationStepName",
+          "description": "The localized name of the navigation step from Power Query.",
           "type": [
             "string",
             "null"
@@ -139,7 +134,7 @@
         },
         "refreshWhenRefreshingAll": {
           "title": "RefreshWhenRefreshingAll",
-          "description": "A boolean indicating if it should refresh this query when refreshing all the queries.",
+          "description": "A boolean indicating if this query should be refreshed when refreshing all queries.",
           "type": [
             "boolean",
             "null"
@@ -147,7 +142,7 @@
         },
         "text": {
           "title": "Text",
-          "description": "The M query to be applied.",
+          "description": "The text of the M expression for this query. Each element of the array is a line of query text. The full query text is produced by concatenating each array element, separated by a newline character.",
           "type": "array",
           "items": {
             "type": [
@@ -158,7 +153,7 @@
         },
         "isDirectQuery": {
           "title": "IsDirectQuery",
-          "description": "A boolean indicating if this is a Direct Query Connection.",
+          "description": "A boolean indicating if this query should use DirectQuery when applied to the data model.",
           "type": [
             "boolean",
             "null"
@@ -166,7 +161,7 @@
         },
         "lastLoadedAsTableFormulaText": {
           "title": "LastLoadedAsTableFormulaText",
-          "description": "A boolean indicating if it was last loaded as TableFormulaText.",
+          "description": "This property is only used in PBIX files that have not been updated to the enhanced metadata format.",
           "type": [
             "string",
             "null"
@@ -174,8 +169,11 @@
         },
         "loadedAsTable": {
           "title": "LoadedAsTable",
-          "description": "A boolean indicating if it was loaded as a table.",
-          "type": "boolean"
+          "description": "This property is only used in PBIX files that have not been updated to the enhanced metadata format.",
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "loadAsTableDisabled": {
           "title": "LoadAsTableDisabled",
@@ -187,7 +185,7 @@
         },
         "resultType": {
           "title": "ResultType",
-          "description": "The datatype of the results from the M expression.",
+          "description": "The mashup object type that results from the M expression. Some examples would be Table, List, or Number.",
           "type": [
             "string",
             "null"
@@ -195,7 +193,7 @@
         },
         "isHidden": {
           "title": "IsHidden",
-          "description": "A boolean indicating if the query is hidden from the query editor. It is recommended to leave this property as is.",
+          "description": "A boolean indicating if the query is a multi-table source. This property is managed by Power BI Desktop and should never be updated manually.",
           "type": [
             "boolean",
             "null"
@@ -209,18 +207,22 @@
     }
   },
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
-      "description": "Version of the local settings the file format.",
+      "description": "Version of the unapplied changes file format.",
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "1.0"
       ]
     },
     "conceptualSchemaSettings": {
       "title": "ConceptualSchemaSettings",
-      "description": "This holds settings related to Direct Query.",
+      "description": "Unapplied settings for DirectQuery connections to Power BI datasets and Analysis Services.",
       "type": [
         "object",
         "null"
@@ -242,7 +244,7 @@
     },
     "queryGroups": {
       "title": "QueryGroups",
-      "description": "The unapplied query groups.",
+      "description": "The groups for queries that have not yet been applied.",
       "type": [
         "array",
         "null"
@@ -253,7 +255,7 @@
     },
     "culture": {
       "title": "Culture",
-      "description": "The Mashup Document culture.",
+      "description": "Specifies the culture to be used when parsing date/time strings. As described in [RFC1766], culture names adhere to the format \"<languagecode2>-<country/regioncode2>.\"",
       "type": [
         "string",
         "null"
@@ -261,7 +263,7 @@
     },
     "firewallEnabled": {
       "title": "FirewallEnabled",
-      "description": "A boolean indicating if we seperate queries for privacy.",
+      "description": "Specifies whether Privacy Level settings are used when combining data. See the Microsoft Support article \"Privacy levels (Power Query)\" for more information.",
       "type": "boolean"
     }
   },

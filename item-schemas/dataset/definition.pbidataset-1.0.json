@@ -9,6 +9,7 @@
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "qnaEnabled": {
           "title": "QnaEnabled",
@@ -18,19 +19,27 @@
         "qnaLsdlSharingPermissions": {
           "title": "QnaLsdlSharingPermissions",
           "description": "Describes how the linguistic schema (LSDL) can be shared with other users within the same tenant. Allowed values are 0 (LSDL can be shared with users with read permission) and 1 (LSDL can be shared with all users).",
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
         }
       }
     }
   },
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
-      "description": "Version of the dataset artifact file format. This also serves as the version number for the .pbidataset file format.",
+      "description": "Version of the dataset item file format. This also serves as the version number for the .pbidataset file format.",
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "1.0"
       ]
     },
     "settings": {

@@ -2,6 +2,7 @@
   "title": "EditorSettings",
   "description": "The EditorSettings stored as editorSettings.json holds dataset editor settings that are saved as part of the dataset definition for use across users or environments. This file is optional.",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
@@ -9,6 +10,9 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "1.0"
       ]
     },
     "showHiddenFields": {

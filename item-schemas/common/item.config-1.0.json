@@ -1,19 +1,23 @@
 {
-  "title": "ArtifactConfig",
-  "description": "The ArtifactConfig stored as item.config.json holds the LogicalId of the artifact and identifies this directory as an artifact. This file can be present in both the Report and Dataset folders with different LogicalIds. This file is optional.",
+  "title": "ItemConfig",
+  "description": "The ItemConfig stored as item.config.json holds the LogicalId of the item and identifies this directory as a Fabric item. There is an ItemConfig file in both the Report and Dataset folders. This file is optional.",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
-      "description": "The verion of this artifact. The current latest version is 1.0",
+      "description": "The verion of this item. The current latest version is 1.0",
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "1.0"
       ]
     },
     "logicalId": {
       "title": "LogicalId",
-      "description": "The logicalId of the artifact is a workspace-unique immutable identifier representing a logical artifact and its source control representation. There is a different logicalId in the Report and Dataset folder.",
+      "description": "The logicalId of the item is a workspace-unique immutable identifier representing a logical item and its source control representation. There is a different logicalId in the Report and Dataset folder.",
       "type": "string"
     }
   },

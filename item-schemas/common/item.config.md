@@ -1,43 +1,24 @@
-# ArtifactConfig
+# ItemConfig
 
-- [1. Property `ArtifactConfig > version`](#version)
-- [2. Property `ArtifactConfig > logicalId`](#logicalId)
+_The ItemConfig stored as item.config.json holds the LogicalId of the item and identifies this directory as a Fabric item. There is an ItemConfig file in both the Report and Dataset folders. This file is optional._
 
-**Title:** ArtifactConfig
+Type: `object`
 
-|                           |                                                                           |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Type**                  | `object`                                                                  |
-| **Required**              | No                                                                        |
-| **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
+<i id="">path: #</i>
 
-**Description:** The ArtifactConfig stored as item.config.json holds the LogicalId of the artifact and identifies this directory as an artifact. This file can be present in both the Report and Dataset folders with different LogicalIds. This file is optional.
+This schema <u>does not</u> accept additional properties.
 
-| Property                   | Pattern | Type           | Deprecated | Definition | Title/Description |
-| -------------------------- | ------- | -------------- | ---------- | ---------- | ----------------- |
-| + [version](#version )     | No      | string or null | No         | -          | Version           |
-| + [logicalId](#logicalId ) | No      | string         | No         | -          | LogicalId         |
+**_Properties_**
 
-## <a name="version"></a>1. Property `ArtifactConfig > version`
-
-**Title:** Version
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string or null` |
-| **Required** | Yes              |
-
-**Description:** The verion of this artifact. The current latest version is 1.0
-
-## <a name="logicalId"></a>2. Property `ArtifactConfig > logicalId`
-
-**Title:** LogicalId
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
-
-**Description:** The logicalId of the artifact is a workspace-unique immutable identifier representing a logical artifact and its source control representation. There is a different logicalId in the Report and Dataset folder.
-
-----------------------------------------------------------------------------------------------------------------------------
+ - <b id="#/properties/version">version</b> `required`
+	 - ### Version
+	 - _The verion of this item. The current latest version is 1.0_
+	 - Types: `string`, `null`
+	 - <i id="/properties/version">path: #/properties/version</i>
+	 - The value is restricted to the following: 
+		 1. _"1.0"_
+ - <b id="#/properties/logicalId">logicalId</b> `required`
+	 - ### LogicalId
+	 - _The logicalId of the item is a workspace-unique immutable identifier representing a logical item and its source control representation. There is a different logicalId in the Report and Dataset folder._
+	 - Type: `string`
+	 - <i id="/properties/logicalId">path: #/properties/logicalId</i>

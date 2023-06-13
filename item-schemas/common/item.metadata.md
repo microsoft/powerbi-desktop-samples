@@ -1,56 +1,27 @@
-# ArtifactMetadata
+# ItemMetadata
 
-- [1. Property `ArtifactMetadata > type`](#type)
-- [2. Property `ArtifactMetadata > displayName`](#displayName)
-- [3. Property `ArtifactMetadata > description`](#description)
+_The ItemMetadata stored as item.metadata.json holds the Type and DisplayName of the item. The DisplayName is what is shown in the title bar of Power BI Desktop. There is an ItemMetadata file in both the Report and Dataset folders. This file is optional._
 
-**Title:** ArtifactMetadata
+Type: `object`
 
-|                           |                                                                           |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Type**                  | `object`                                                                  |
-| **Required**              | No                                                                        |
-| **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
+<i id="">path: #</i>
 
-**Description:** The ArtifactMetadata stored as item.metadata.json holds the Type and DisplayName of the artifact. The DisplayName is what is shown in the title bar of Power BI Desktop. There will be an ArtifactMetadata file in both the Report and Dataset folders. This file is optional.
+This schema <u>does not</u> accept additional properties.
 
-| Property                       | Pattern | Type           | Deprecated | Definition | Title/Description |
-| ------------------------------ | ------- | -------------- | ---------- | ---------- | ----------------- |
-| - [type](#type )               | No      | string or null | No         | -          | Type              |
-| - [displayName](#displayName ) | No      | string or null | No         | -          | DisplayName       |
-| - [description](#description ) | No      | string or null | No         | -          | Description       |
+**_Properties_**
 
-## <a name="type"></a>1. Property `ArtifactMetadata > type`
-
-**Title:** Type
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string or null` |
-| **Required** | No               |
-
-**Description:** The type of the artifact either "report" or "dataset".
-
-## <a name="displayName"></a>2. Property `ArtifactMetadata > displayName`
-
-**Title:** DisplayName
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string or null` |
-| **Required** | No               |
-
-**Description:** The displayname of the artifact.
-
-## <a name="description"></a>3. Property `ArtifactMetadata > description`
-
-**Title:** Description
-
-|              |                  |
-| ------------ | ---------------- |
-| **Type**     | `string or null` |
-| **Required** | No               |
-
-**Description:** The description of the artifact.
-
-----------------------------------------------------------------------------------------------------------------------------
+ - <b id="#/properties/type">type</b>
+	 - ### Type
+	 - _The type of the item either "report" or "dataset"._
+	 - Types: `string`, `null`
+	 - <i id="/properties/type">path: #/properties/type</i>
+ - <b id="#/properties/displayName">displayName</b>
+	 - ### DisplayName
+	 - _The display name of the item._
+	 - Types: `string`, `null`
+	 - <i id="/properties/displayName">path: #/properties/displayName</i>
+ - <b id="#/properties/description">description</b>
+	 - ### Description
+	 - _The description of the item._
+	 - Types: `string`, `null`
+	 - <i id="/properties/description">path: #/properties/description</i>

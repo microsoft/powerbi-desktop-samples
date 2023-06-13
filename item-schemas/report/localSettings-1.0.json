@@ -4,6 +4,7 @@
   "definitions": {
     "ReportRemoteArtifact": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "reportId": {
           "title": "ReportId",
@@ -20,6 +21,7 @@
     }
   },
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "title": "Version",
@@ -27,6 +29,9 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "1.0"
       ]
     },
     "remoteArtifacts": {
@@ -42,7 +47,7 @@
     },
     "securityBindingsSignature": {
       "title": "SecurityBindingsSignature",
-      "description": "A base64 encoded signature which when absent or invalid will require the user to review or consent.",
+      "description": "A base64 encoded signature which when absent or invalid will reset saved properties which require user review or consent.",
       "type": [
         "string",
         "null"
