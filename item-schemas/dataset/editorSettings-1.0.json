@@ -1,0 +1,57 @@
+{
+  "title": "EditorSettings",
+  "description": "The EditorSettings stored as editorSettings.json holds dataset editor settings that are saved as part of the dataset definition for use across users or environments. This file is optional.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "Version of the dataset editor settings file format.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "1.0"
+      ]
+    },
+    "showHiddenFields": {
+      "title": "ShowHiddenFields",
+      "description": "Whether hidden fields should be shown in a field list.",
+      "type": "boolean"
+    },
+    "autodetectRelationships": {
+      "title": "AutodetectRelationships",
+      "description": "Whether relationships should be automatically detected when adding tables.",
+      "type": "boolean"
+    },
+    "parallelQueryLoading": {
+      "title": "ParallelQueryLoading",
+      "description": "Whether multiple M queries should be run in parallel.",
+      "type": "boolean"
+    },
+    "typeDetectionEnabled": {
+      "title": "TypeDetectionEnabled",
+      "description": "Whether to detect column types and headers for unstructured data sources.",
+      "type": "boolean"
+    },
+    "relationshipImportEnabled": {
+      "title": "RelationshipImportEnabled",
+      "description": "Whether relationships should be imported from data sources during the first load of data.",
+      "type": "boolean"
+    },
+    "relationshipRefreshEnabled": {
+      "title": "RelationshipRefreshEnabled",
+      "description": "Whether relationships should be updated or deleted when refreshing data.",
+      "type": "boolean"
+    },
+    "runBackgroundAnalysis": {
+      "title": "RunBackgroundAnalysis",
+      "description": "Whether to load data previews for the query editor in the background.",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "version"
+  ]
+}

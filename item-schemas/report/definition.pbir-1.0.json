@@ -1,0 +1,133 @@
+{
+  "title": "ReportDefinition",
+  "description": "The ReportDefinition is stored as definition.pbir. It contains metadata about the overall file structure, holds core settings, and holds a reference to the dataset used by this report. This file is required.",
+  "definitions": {
+    "DatasetReference": {
+      "title": "DatasetReference",
+      "description": "The DatasetReference defines the dataset that is bound to this report. It is required to have exactly one of either the byPath or byConnection properties. The byConnection property would typically be used for LiveConnect scenarios whereas byPath would point at a local dataset.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "byPath": {
+          "$ref": "#/definitions/ReportDatasetReferenceByPath"
+        },
+        "byConnection": {
+          "$ref": "#/definitions/ReportDatasetReferenceByConnection"
+        }
+      }
+    },
+    "ReportDatasetReferenceByConnection": {
+      "title": "ByConnection",
+      "description": "Provides a reference to a remote dataset using a connection string. The connection string must point to a dataset hosted in the Microsoft Fabric service.  Connections to other Analysis Services semantic models must use a byPath reference to a dataset definition containing a modelReference.json file.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "connectionString": {
+          "title": "ConnectionString",
+          "description": "The connection string referring to the remote dataset.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pbiServiceModelId": {
+          "title": "PbiServiceModelId",
+          "description": "The unique identifier for the target dataset in the Microsoft Fabric service.",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "pbiModelVirtualServerName": {
+          "title": "PbiModelVirtualServerName",
+          "description": "The virtual server name for the target dataset in the Microsoft Fabric service.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pbiModelDatabaseName": {
+          "title": "PbiModelDatabaseName",
+          "description": "The database name for the target dataset in the Microsoft Fabric service.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the connection. The value of this property must be 'EntityDataSource'. This property will be removed in a future release.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "connectionType": {
+          "title": "ConnectionType",
+          "description": "The type of connection. The value of this property must be 'pbiServiceXmlaStyleLive'. This property will be removed in a future release.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "connectionString",
+        "pbiServiceModelId",
+        "pbiModelVirtualServerName",
+        "pbiModelDatabaseName",
+        "name",
+        "connectionType"
+      ]
+    },
+    "ReportDatasetReferenceByPath": {
+      "title": "ByPath",
+      "description": "Provides a reference to a local dataset artifact definition.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "description": "A relative path from this file to the target dataset artifact folder. Uses ‘/’ as a directory separator.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "path"
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "Version of the report artifact file format.  This also serves as the version number for the .pbir file format.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "1.0"
+      ]
+    },
+    "datasetReference": {
+      "$ref": "#/definitions/DatasetReference"
+    }
+  },
+  "required": [
+    "version"
+  ]
+}

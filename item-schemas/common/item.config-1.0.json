@@ -1,0 +1,28 @@
+{
+  "title": "ItemConfig",
+  "description": "The ItemConfig stored as item.config.json holds the LogicalId of the item and identifies this directory as a Fabric item. There is an ItemConfig file in both the Report and Dataset folders. This file is optional.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "The verion of this item. The current latest version is 1.0",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "1.0"
+      ]
+    },
+    "logicalId": {
+      "title": "LogicalId",
+      "description": "The logicalId of the item is a workspace-unique immutable identifier representing a logical item and its source control representation. There is a different logicalId in the Report and Dataset folder.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "logicalId"
+  ]
+}

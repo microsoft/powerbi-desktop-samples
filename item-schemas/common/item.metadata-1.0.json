@@ -1,0 +1,32 @@
+{
+  "title": "ItemMetadata",
+  "description": "The ItemMetadata stored as item.metadata.json holds the Type and DisplayName of the item. The DisplayName is what is shown in the title bar of Power BI Desktop. There is an ItemMetadata file in both the Report and Dataset folders. This file is optional.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "title": "Type",
+      "description": "The type of the item either \"report\" or \"dataset\".",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "displayName": {
+      "title": "DisplayName",
+      "description": "The display name of the item.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "title": "Description",
+      "description": "The description of the item.",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

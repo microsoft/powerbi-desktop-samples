@@ -1,0 +1,89 @@
+{
+  "title": "LocalSettings",
+  "description": "The LocalSettings stored as localSettings.json holds dataset settings that only apply to the current user/machine. This file is optional.",
+  "definitions": {
+    "DatasetRemoteArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "datasetId": {
+          "title": "DatasetId",
+          "description": "The ID of a published dataset created from this definition.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "datasetId"
+      ]
+    },
+    "DatasetUserConsent": {
+      "title": "UserConsent",
+      "description": "Holds information about whether the user has agreed to the use of various features.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "compositeModel": {
+          "title": "CompositeModel",
+          "description": "Whether the user has consented to the use of models with multiple direct query data sources.",
+          "type": "boolean"
+        },
+        "qnAForLiveConnect": {
+          "title": "QnAForLiveConnect",
+          "description": "Whether the user has consented to the use of Q&A for live connections to models hosted outside Power BI.",
+          "type": "boolean"
+        },
+        "dynamicQueryParameters": {
+          "title": "DynamicQueryParameters",
+          "description": "Whether the user has consented to the use of dynamic M query parameters in their report.",
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "Version of the local settings file format.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "1.0"
+      ]
+    },
+    "userConsent": {
+      "$ref": "#/definitions/DatasetUserConsent"
+    },
+    "remoteArtifacts": {
+      "title": "RemoteArtifacts",
+      "description": "Describes the published Power BI artifacts associated with this definition.",
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/DatasetRemoteArtifact"
+      }
+    },
+    "securityBindingsSignature": {
+      "title": "SecurityBindingsSignature",
+      "description": "A base64 encoded signature which when absent or invalid will reset saved properties which require user review or consent.",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "version"
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "title": "UnappliedChanges",
+  "description": "Holds information about changes that have not yet been applied to the data model. This includes M queries and associated metadata. This file is optional.",
+  "definitions": {
+    "ConceptualSchemaSettingsStorage": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "IncludeFutureArtifacts": {
+          "title": "IncludeFutureArtifacts",
+          "description": "Indicates whether tables will be automatically added to the local model as they're added to the remote data source.",
+          "type": "boolean"
+        },
+        "ModelObjectUrnToSerializedRemovedChildren": {
+          "title": "ModelObjectUrnToSerializedRemovedChildren",
+          "description": "A list of remote tables excluded from the local model.",
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "PerspectiveName": {
+          "title": "PerspectiveName",
+          "description": "The name of the perspective used to select which tables will be included from the target model.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "IncludeFutureArtifacts",
+        "ModelObjectUrnToSerializedRemovedChildren",
+        "PerspectiveName"
+      ]
+    },
+    "QueryGroupStorage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The user visible name of this group.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "title": "Id",
+          "description": "The identifier used to refer to this group in a query's queryGroupId or group's parentId.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "title": "Order",
+          "description": "The order of the group.",
+          "type": "integer"
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the group.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parentId": {
+          "title": "ParentId",
+          "description": "The id of the parent group.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isUngroupedQueriesVirtualGroup": {
+          "title": "IsUngroupedQueriesVirtualGroup",
+          "description": "A boolean indicating if this is the Other Queries group.",
+          "type": "boolean"
+        }
+      }
+    },
+    "QueryStorage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The name of the query.",
+          "type": "string"
+        },
+        "lineageTag": {
+          "title": "ModelLineageTag",
+          "description": "An optional tag that can be used to define the lineage of an expression across different versions of a model.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "A description of the query.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "queryGroupId": {
+          "title": "QueryGroupId",
+          "description": "The GUID of the query group that the query belongs to.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "navigationStepName": {
+          "title": "NavigationStepName",
+          "description": "The localized name of the navigation step from Power Query.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refreshWhenRefreshingAll": {
+          "title": "RefreshWhenRefreshingAll",
+          "description": "A boolean indicating if this query should be refreshed when refreshing all queries.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "text": {
+          "title": "Text",
+          "description": "The text of the M expression for this query. Each element of the array is a line of query text. The full query text is produced by concatenating each array element, separated by a newline character.",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "isDirectQuery": {
+          "title": "IsDirectQuery",
+          "description": "A boolean indicating if this query should use DirectQuery when applied to the data model.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "lastLoadedAsTableFormulaText": {
+          "title": "LastLoadedAsTableFormulaText",
+          "description": "This property is only used in PBIX files that have not been updated to the enhanced metadata format.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "loadedAsTable": {
+          "title": "LoadedAsTable",
+          "description": "This property is only used in PBIX files that have not been updated to the enhanced metadata format.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "loadAsTableDisabled": {
+          "title": "LoadAsTableDisabled",
+          "description": "A boolean indicating if the query should be loaded as a table.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "resultType": {
+          "title": "ResultType",
+          "description": "The mashup object type that results from the M expression. Some examples would be Table, List, or Number.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isHidden": {
+          "title": "IsHidden",
+          "description": "A boolean indicating if the query is a multi-table source. This property is managed by Power BI Desktop and should never be updated manually.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "text"
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "description": "Version of the unapplied changes file format.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "1.0"
+      ]
+    },
+    "conceptualSchemaSettings": {
+      "title": "ConceptualSchemaSettings",
+      "description": "Unapplied settings for DirectQuery connections to Power BI datasets and Analysis Services.",
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": {
+        "$ref": "#/definitions/ConceptualSchemaSettingsStorage"
+      }
+    },
+    "queries": {
+      "title": "Queries",
+      "description": "A list of the queries that have not yet been applied.",
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/QueryStorage"
+      }
+    },
+    "queryGroups": {
+      "title": "QueryGroups",
+      "description": "The groups for queries that have not yet been applied.",
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/QueryGroupStorage"
+      }
+    },
+    "culture": {
+      "title": "Culture",
+      "description": "Specifies the culture to be used when parsing date/time strings. As described in [RFC1766], culture names adhere to the format \"<languagecode2>-<country/regioncode2>.\"",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "firewallEnabled": {
+      "title": "FirewallEnabled",
+      "description": "Specifies whether Privacy Level settings are used when combining data. See the Microsoft Support article \"Privacy levels (Power Query)\" for more information.",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "version"
+  ]
+}
