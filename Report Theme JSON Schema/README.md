@@ -8,6 +8,7 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                  |
 |--------------------------|----------|----------------------|------------------------------|
+| 2.117.x.x                | May 2023 | 5.44                 | reportThemeSchema-2.117.json |
 | 2.116.x.x                | Apr 2023 | 5.43                 | reportThemeSchema-2.116.json |
 | 2.115.x.x                | Mar 2023 | 5.42                 | reportThemeSchema-2.115.json |
 | 2.114.x.x                | Feb 2023 | 5.41                 | reportThemeSchema-2.114.json |
@@ -60,18 +61,22 @@ We currently do not support the following items in the custom report theme JSON,
 ### Known issues
 The following describes known issues in previously-released reportThemeSchema JSON files.  "Open issues" are not prioritized for quick fixing and will be priotized as time allows.
 
+#### Open issues
+
+* Default "group" visualType styling is not exported into the schema (not blocking, but not documented in schema; internal #1068300)
+* Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
+* Should also export well-known `$id` repetition like "Active" and "Available" slicer pane cards, "default/hover/active/disabled" actionButton states; see [Issue #59](https://github.com/microsoft/powerbi-desktop-samples/issues/59).
+
+#### May 2023 (2.117)
+Issues fixed in the May 2023 release (2.117) of Power BI Desktop:
+* Enumeration values are not clearly defined such as "labelOrientation"; took the fix of [using enum descriptors with `const`](https://github.com/json-schema-org/json-schema-spec/issues/57#issuecomment-247861695)
+* Schema for "image" visualType is now exported + supported
+
 #### February 2023 (2.114)
 Issues in the February 2023 release (2.114) and fixed in the March 2023 release (2.115) of Power BI Desktop:
 * The top-level `icons` schema only supports icons defined in a list, not as a named object list.
 * Certain "verticalAlignment" formatting options may only accept horizontal alignment options such as "left", "center", and "right" instead of "top", "middle", and "bottom".
 * Eight-digit hex colors were not allowed for `Fill` definitions, where the last octet describes alpha transparency, e.g.: `#0000ff7f` -> `rgba(0, 0, 255, 0.5)`
-
-#### Open issues
-
-* _Fix forthcoming for May 2023 release_: Enumeration values are not clearly defined such as "labelOrientation"; [consider using enum descriptors using `const`](https://github.com/json-schema-org/json-schema-spec/issues/57#issuecomment-247861695)
-* _Fix forthcoming for May 2023 release_: Images
-* Default "group" styling is not exported into the schema (not blocking, but not documented in schema; internal #1068300)
-* Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
 
 
 ## Comments or suggestions
