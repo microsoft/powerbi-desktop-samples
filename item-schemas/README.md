@@ -20,7 +20,7 @@ You can use Visual Studio Code as a code editor to author the metadata files and
 
 When authoring the document, only valid properties show up:
 
-![Alt text](_images/vscode-schemas-context.png)
+![Alt text](_images/vscode-schemas-validproperties.png)
 
 If a wrong property or type is specified an warning is emited:
 
