@@ -8,6 +8,8 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                  |
 |--------------------------|----------|----------------------|------------------------------|
+| 2.123.x.x                | Nov 2023 | 5.49                 | reportThemeSchema-2.123.json |
+| 2.122.x.x                | Oct 2023 | 5.48                 | reportThemeSchema-2.122.json |
 | 2.121.x.x                | Sep 2023 | 5.48                 | reportThemeSchema-2.121.json |
 | 2.120.x.x                | Aug 2023 | 5.47                 | reportThemeSchema-2.120.json |
 | 2.119.x.x                | Jul 2023 | 5.46                 | reportThemeSchema-2.119.json |
@@ -69,7 +71,7 @@ The following describes known issues in previously-released reportThemeSchema JS
 
 * Default "group" visualType styling is not exported into the schema (not blocking, but not documented in schema; internal #1068300)
 * Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
-* Should also export well-known `$id` repetition like "Active" and "Available" slicer pane cards, "default/hover/active/disabled" actionButton states; see [Issue #59](https://github.com/microsoft/powerbi-desktop-samples/issues/59).
+* Should also export well-known `$id` repetition like "Active" and "Available" slicer pane cards, "default/hover/active/disabled" actionButton states, "default" for cardVisual/advancedSlicerVisual; see [Issue #59](https://github.com/microsoft/powerbi-desktop-samples/issues/59).
 
 #### May 2023 (2.117)
 Issues fixed in the May 2023 release (2.117) of Power BI Desktop:
