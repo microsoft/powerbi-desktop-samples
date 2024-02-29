@@ -8,6 +8,7 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                  |
 |--------------------------|----------|----------------------|------------------------------|
+| 2.126.x.x                | Feb 2024 | 5.51                 | reportThemeSchema-2.126.json |
 | 2.124.x.x                | Dec 2023 | 5.50                 | reportThemeSchema-2.124.json |
 | 2.123.x.x                | Nov 2023 | 5.49                 | reportThemeSchema-2.123.json |
 | 2.122.x.x                | Oct 2023 | 5.48                 | reportThemeSchema-2.122.json |
@@ -72,17 +73,17 @@ The following describes known issues in previously-released reportThemeSchema JS
 
 * Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
 
-### December 2023 (2.124)
+#### Fixed in December 2023 (2.124)
 
 * Default "group" visualType styling is exported into the schema (visual container groups)
 * Export well-known `$id` repetition like "Active" and "Available" slicer pane cards, "default/hover/active/disabled" actionButton states, "default" for cardVisual/advancedSlicerVisual; see [Issue #59](https://github.com/microsoft/powerbi-desktop-samples/issues/59).
 
-#### May 2023 (2.117)
+#### Fixed in May 2023 (2.117)
 Issues fixed in the May 2023 release (2.117) of Power BI Desktop:
 * Enumeration values are not clearly defined such as "labelOrientation"; took the fix of [using enum descriptors with `const`](https://github.com/json-schema-org/json-schema-spec/issues/57#issuecomment-247861695)
 * Schema for "image" visualType is now exported + supported
 
-#### February 2023 (2.114)
+#### Fixed in February 2023 (2.114)
 Issues in the February 2023 release (2.114) and fixed in the March 2023 release (2.115) of Power BI Desktop:
 * The top-level `icons` schema only supports icons defined in a list, not as a named object list.
 * Certain "verticalAlignment" formatting options may only accept horizontal alignment options such as "left", "center", and "right" instead of "top", "middle", and "bottom".
