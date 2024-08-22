@@ -6,25 +6,26 @@ Each file is tagged with the monthly release version of Desktop.  Inside the fil
 
 As part of our on-going effort to provide complete specification of our file format, subsequent versions of this schema will feature mostly additive changes as new formatting settings are added.
 
-| Power BI Desktop version | Date     |  Exploration version | Schema name                  |
-|--------------------------|----------|----------------------|------------------------------|
-| 2.131.x.x                | Jul 2024 | 5.56                 | reportThemeSchema-2.131.json |
-| 2.130.x.x                | Jun 2024 | 5.55                 | reportThemeSchema-2.130.json |
-| 2.129.x.x                | May 2024 | 5.54                 | reportThemeSchema-2.129.json |
-| 2.128.x.x                | Apr 2024 | 5.53                 | reportThemeSchema-2.128.json |
-| 2.127.x.x                | Mar 2024 | 5.52                 | reportThemeSchema-2.127.json |
-| 2.126.x.x                | Feb 2024 | 5.51                 | reportThemeSchema-2.126.json |
-| 2.124.x.x                | Dec 2023 | 5.50                 | reportThemeSchema-2.124.json |
-| 2.123.x.x                | Nov 2023 | 5.49                 | reportThemeSchema-2.123.json |
-| 2.122.x.x                | Oct 2023 | 5.48                 | reportThemeSchema-2.122.json |
-| 2.121.x.x                | Sep 2023 | 5.48                 | reportThemeSchema-2.121.json |
-| 2.120.x.x                | Aug 2023 | 5.47                 | reportThemeSchema-2.120.json |
-| 2.119.x.x                | Jul 2023 | 5.46                 | reportThemeSchema-2.119.json |
-| 2.118.x.x                | Jun 2023 | 5.45                 | reportThemeSchema-2.118.json |
-| 2.117.x.x                | May 2023 | 5.44                 | reportThemeSchema-2.117.json |
-| 2.116.x.x                | Apr 2023 | 5.43                 | reportThemeSchema-2.116.json |
-| 2.115.x.x                | Mar 2023 | 5.42                 | reportThemeSchema-2.115.json |
-| 2.114.x.x                | Feb 2023 | 5.41                 | reportThemeSchema-2.114.json |
+| Power BI Desktop version | Date     |  Exploration version | Schema name                                                    |
+|--------------------------|----------|----------------------|----------------------------------------------------------------|
+| 2.132.x.x                | Aug 2024 | 5.57                 | [reportThemeSchema-2.132.json](./reportThemeSchema-2.132.json) |
+| 2.131.x.x                | Jul 2024 | 5.56                 | [reportThemeSchema-2.131.json](./reportThemeSchema-2.131.json) |
+| 2.130.x.x                | Jun 2024 | 5.55                 | [reportThemeSchema-2.130.json](./reportThemeSchema-2.130.json) |
+| 2.129.x.x                | May 2024 | 5.54                 | [reportThemeSchema-2.129.json](./reportThemeSchema-2.129.json) |
+| 2.128.x.x                | Apr 2024 | 5.53                 | [reportThemeSchema-2.128.json](./reportThemeSchema-2.128.json) |
+| 2.127.x.x                | Mar 2024 | 5.52                 | [reportThemeSchema-2.127.json](./reportThemeSchema-2.127.json) |
+| 2.126.x.x                | Feb 2024 | 5.51                 | [reportThemeSchema-2.126.json](./reportThemeSchema-2.126.json) |
+| 2.124.x.x                | Dec 2023 | 5.50                 | [reportThemeSchema-2.124.json](./reportThemeSchema-2.124.json) |
+| 2.123.x.x                | Nov 2023 | 5.49                 | [reportThemeSchema-2.123.json](./reportThemeSchema-2.123.json) |
+| 2.122.x.x                | Oct 2023 | 5.48                 | [reportThemeSchema-2.122.json](./reportThemeSchema-2.122.json) |
+| 2.121.x.x                | Sep 2023 | 5.48                 | [reportThemeSchema-2.121.json](./reportThemeSchema-2.121.json) |
+| 2.120.x.x                | Aug 2023 | 5.47                 | [reportThemeSchema-2.120.json](./reportThemeSchema-2.120.json) |
+| 2.119.x.x                | Jul 2023 | 5.46                 | [reportThemeSchema-2.119.json](./reportThemeSchema-2.119.json) |
+| 2.118.x.x                | Jun 2023 | 5.45                 | [reportThemeSchema-2.118.json](./reportThemeSchema-2.118.json) |
+| 2.117.x.x                | May 2023 | 5.44                 | [reportThemeSchema-2.117.json](./reportThemeSchema-2.117.json) |
+| 2.116.x.x                | Apr 2023 | 5.43                 | [reportThemeSchema-2.116.json](./reportThemeSchema-2.116.json) |
+| 2.115.x.x                | Mar 2023 | 5.42                 | [reportThemeSchema-2.115.json](./reportThemeSchema-2.115.json) |
+| 2.114.x.x                | Feb 2023 | 5.41                 | [reportThemeSchema-2.114.json](./reportThemeSchema-2.114.json) |
 
 ## Using the JSON schema
 
