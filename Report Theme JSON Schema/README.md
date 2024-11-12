@@ -8,6 +8,8 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                                                    |
 |--------------------------|----------|----------------------|----------------------------------------------------------------|
+| 2.138.x.x                | Nov 2024 | 5.60                 | [reportThemeSchema-2.138.json](./reportThemeSchema-2.138.json) |
+| 2.137.x.x                | Oct 2024 | 5.59                 | [reportThemeSchema-2.137.json](./reportThemeSchema-2.137.json) |
 | 2.136.x.x                | Sep 2024 | 5.58                 | [reportThemeSchema-2.136.json](./reportThemeSchema-2.136.json) |
 | 2.132.x.x                | Aug 2024 | 5.57                 | [reportThemeSchema-2.132.json](./reportThemeSchema-2.132.json) |
 | 2.131.x.x                | Jul 2024 | 5.56                 | [reportThemeSchema-2.131.json](./reportThemeSchema-2.131.json) |
@@ -80,7 +82,7 @@ The following describes known issues in previously-released reportThemeSchema JS
 
 * Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
 
-### Fixed in September 2024 (2.136)
+#### Fixed in September 2024 (2.136)
 
 * All lists of formatting objects and properties are now in alphabetical order in the schema.  This change prevents extra needless diffs between schema versions due to code and capability refactoring, making it clearer what formatting options are added month-to-month.
 
