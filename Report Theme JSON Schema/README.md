@@ -8,6 +8,7 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                                                    |
 |--------------------------|----------|----------------------|----------------------------------------------------------------|
+| 2.139.x.x                | Jan 2025 | 5.61                 | [reportThemeSchema-2.139.json](./reportThemeSchema-2.139.json) |
 | 2.138.x.x                | Nov 2024 | 5.60                 | [reportThemeSchema-2.138.json](./reportThemeSchema-2.138.json) |
 | 2.137.x.x                | Oct 2024 | 5.59                 | [reportThemeSchema-2.137.json](./reportThemeSchema-2.137.json) |
 | 2.136.x.x                | Sep 2024 | 5.58                 | [reportThemeSchema-2.136.json](./reportThemeSchema-2.136.json) |
@@ -81,6 +82,38 @@ The following describes known issues in previously-released reportThemeSchema JS
 #### Open issues
 
 * Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
+
+#### Fixed in January 2025 (2.139)
+
+Strengthened the check under the `visualStyles > * > *` hierarchy that the following pattern is enforced, much like specific visual style definitions.  This helps to restrict the ability for a poorly-constructed theme definition to comprimise a Power BI report's functionality.
+
+Under `visualStyles > * > *`, enforce that:
+
+```
+[objectName]: [{
+    [propertyName]: number, boolean, string, or other structural type (color fill, themeColorExpr, etc.)
+}, ...]
+```
+
+Definitions that don't match this type will get a very verbose error message that indicates that the definition of the `propertyName` does not match number, boolean, string, as well as enumerating every other structural type that it could match.  The error messages that fail this check will look something like the following; note that the initial error message starts with `#/visualStyles/*/*/[objectName]`, so the example error below references `visualStyles > * > * > tableEx`:
+
+```
+#/visualStyles/*/*/tableEx/0/* must be string,number,boolean (type; matching schema #/properties/visualStyles/additionalProperties/properties/*/patternProperties/%5E.%2B%24/items/patternProperties/%5E.%2B%24/anyOf/0/type)
+#/visualStyles/*/*/tableEx/0/* must have required property 'reverseDirection' (required; matching schema #/required)
+#/visualStyles/*/*/tableEx/0/* must have required property 'hideText' (required; matching schema #/required)
+#/visualStyles/*/*/tableEx/0/* must NOT have additional properties (additionalProperties; matching schema #/additionalProperties)
+#/visualStyles/*/*/tableEx/0/* must NOT have additional properties (additionalProperties; matching schema #/additionalProperties)
+#/visualStyles/*/*/tableEx/0/* must have required property 'solid' (required; matching schema #/oneOf/0/required)
+#/visualStyles/*/*/tableEx/0/* must NOT have additional properties (additionalProperties; matching schema #/oneOf/0/additionalProperties)
+#/visualStyles/*/*/tableEx/0/* must NOT have additional properties (additionalProperties; matching schema #/oneOf/0/additionalProperties)
+#/visualStyles/*/*/tableEx/0/* must have required property 'gradient' (required; matching schema #/oneOf/1/required)
+#/visualStyles/*/*/tableEx/0/* must NOT have additional properties (additionalProperties; matching schema #/oneOf/1/additionalProperties)
+[... about 30 additional lines follow]
+```
+
+To fix report themes against this validation error, ensure that it matches the pattern above.  Our documentation also covers this pattern about [setting visual property defaults in report themes](https://learn.microsoft.com/power-bi/create-reports/desktop-report-themes#set-visual-property-defaults-visualstyles).
+
+TIP: It may be easier to see the specific validation error if you make your failing definition specific to a particular visual type (e.g., `tableEx > * > [objectName]`) instead of generalized to all visuals with the `*` wildcard.
 
 #### Fixed in September 2024 (2.136)
 
