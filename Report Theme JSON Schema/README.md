@@ -8,6 +8,7 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     |  Exploration version | Schema name                                                    |
 |--------------------------|----------|----------------------|----------------------------------------------------------------|
+| 2.140.x.x                | Feb 2025 | 5.61                 | [reportThemeSchema-2.140.json](./reportThemeSchema-2.140.json) |
 | 2.139.x.x                | Jan 2025 | 5.61                 | [reportThemeSchema-2.139.json](./reportThemeSchema-2.139.json) |
 | 2.138.x.x                | Nov 2024 | 5.60                 | [reportThemeSchema-2.138.json](./reportThemeSchema-2.138.json) |
 | 2.137.x.x                | Oct 2024 | 5.59                 | [reportThemeSchema-2.137.json](./reportThemeSchema-2.137.json) |
