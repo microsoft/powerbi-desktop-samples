@@ -6,8 +6,12 @@ Each file is tagged with the monthly release version of Desktop.  Inside the fil
 
 As part of our on-going effort to provide complete specification of our file format, subsequent versions of this schema will feature mostly additive changes as new formatting settings are added.
 
-| Power BI Desktop version | Date     |  Exploration version | Schema name                                                    |
+| Power BI Desktop version | Date     | Exploration version  | Schema name                                                    |
 |--------------------------|----------|----------------------|----------------------------------------------------------------|
+| 2.149.x.x                | Nov 2025 | 5.68                 | [reportThemeSchema-2.149.json](./reportThemeSchema-2.149.json) |
+| 2.148.x.x                | Oct 2025 | 5.67                 | [reportThemeSchema-2.148.json](./reportThemeSchema-2.148.json) |
+| 2.147.x.x                | Sep 2025 | 5.66                 | [reportThemeSchema-2.147.json](./reportThemeSchema-2.147.json) |
+| 2.146.x.x                | Aug 2025 | 5.66                 | [reportThemeSchema-2.146.json](./reportThemeSchema-2.146.json) |
 | 2.145.x.x                | Jul 2025 | 5.65                 | [reportThemeSchema-2.145.json](./reportThemeSchema-2.145.json) |
 | 2.144.x.x                | Jun 2025 | 5.65                 | [reportThemeSchema-2.144.json](./reportThemeSchema-2.144.json) |
 | 2.143.x.x                | May 2025 | 5.64                 | [reportThemeSchema-2.143.json](./reportThemeSchema-2.143.json) |
