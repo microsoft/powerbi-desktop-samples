@@ -8,6 +8,7 @@ As part of our on-going effort to provide complete specification of our file for
 
 | Power BI Desktop version | Date     | Exploration version  | Schema name                                                    |
 |--------------------------|----------|----------------------|----------------------------------------------------------------|
+| 2.152.x.x                | Mar 2026 | 5.71                 | [reportThemeSchema-2.151.json](./reportThemeSchema-2.152.json) |
 | 2.151.x.x                | Feb 2026 | 5.70                 | [reportThemeSchema-2.151.json](./reportThemeSchema-2.151.json) |
 | 2.150.x.x                | Jan 2026 | 5.69                 | [reportThemeSchema-2.150.json](./reportThemeSchema-2.150.json) |
 | 2.149.x.x                | Nov 2025 | 5.68                 | [reportThemeSchema-2.149.json](./reportThemeSchema-2.149.json) |
@@ -84,16 +85,23 @@ The error messges that we generate in Power BI Desktop are based on [the Ajv lib
 ## Limitations
 
 We currently do not support the following items in the custom report theme JSON, though we may add support given feedback:
-* References to dynamic content that reports support (other than `ThemeDataColor` expressions), e.g. `expr: { SparklineData: { ... } }`
-* References from formatting colors to semantic colors, e.g. `"foreground"` for a `Fill` type.
-* References to model-specific items, such as _conditional formatting_ that depends on fields or data values
+* References to dynamic content that reports support (other than `ThemeDataColor` expressions), e.g. `expr: { SparklineData: { ... } }`, and
+* References to model-specific items, such as _conditional formatting_ that depends on fields or data values.
 
 ### Known issues
 The following describes known issues in previously-released reportThemeSchema JSON files.  "Open issues" are not prioritized for quick fixing and will be priotized as time allows.
 
 #### Open issues
 
-* Defining a default "canvas size" doesn't work; see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51).
+* Document updated advancedSlicerVisual selector states: #130
+* Styling slicer mode property doesn't work in all cases: #84
+* Ability to define icon sets in themes: #86
+
+#### Fixed in March 2026 (2.152)
+
+Fixed default canvas size being inherited from the theme settings (see [Issue #51](https://github.com/microsoft/powerbi-desktop-samples/issues/51)).  Currently, this only applies to new pages and will not affect already-created pages.
+
+Updated color fill definitions to take references to theme and structural colors defined at the top level of the theme, resolving a known limitation of this theme schema.  This means you can define `{ "solid": { "color": "foreground" } }` values for specific visuals' properties to not redeclare specific colors across the theme.  To reference specific _data colors_, you can use the existing `{ "solid": { "color": { "expr": { "ThemeDataColor": { "ColorId": 2, "Percent": 0 } } } } }` pattern.
 
 #### Fixed in January 2025 (2.139)
 
