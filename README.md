@@ -38,3 +38,5 @@ Within the *Sample Reports* folder, you will find different report samples that 
 ## Report theme JSON schema
 
 Within the *Report Theme JSON Schema* folder, you will find [JSON schemas](http://json-schema.org) that specify valid properties to be customized in a Power BI report.  This schema can be used in external application development or as a direct reference `"$schema"` within your custom theme JSON files for validation.  More information [in the folder's README.md file](/Report%20Theme%20JSON%20Schema/README.md).
+
+<!-- Reviewed by Len - March 2026 -->
